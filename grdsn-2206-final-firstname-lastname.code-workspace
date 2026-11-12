@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Web 2/exercise-6"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "grdsn-2206-final-firstname-lastname"
+	}
+}

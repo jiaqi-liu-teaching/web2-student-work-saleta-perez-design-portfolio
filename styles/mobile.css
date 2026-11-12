@@ -1,0 +1,216 @@
+
+
+
+/* heading */
+
+h1 {
+    font-size: 50px;  
+}
+
+h2 {
+    font-size: larger;
+}
+
+p {
+    font-size: small;
+}
+
+a {
+    font-size: larger;
+}
+
+
+/* header and nav */
+
+header {
+    padding: 30px 2%;
+    height: 100px;
+    width: 500px;
+}
+
+.logo-img {
+    padding-left: 0;
+    width: 40%;
+}
+
+nav {
+    width: 25%;
+    display: none;
+}
+
+nav a {
+    padding-right: 15px;
+    font-size: medium;
+}
+
+.hamburger-button {
+    display: block; 
+    width: 10%;
+}
+
+.mobile-overlay {
+    display: flex;
+    justify-content: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    background: #ECE7DF;
+    z-index: 1000;
+
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+}
+
+.overlay-open {
+    transform: translateX(0);
+}
+
+.mobile-overlay a {
+    font-size: x-large;
+    color: black;
+}
+
+.close-button {
+    width: 10%;
+    position: fixed;
+    top: 33px;
+    right: 21px;
+    
+}
+
+.overlay-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+
+/* portfolio main page */
+
+
+.portfolio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    width: 500px;
+    height: 100%;
+
+}
+
+.projects{
+    width: 100%;
+   
+}
+
+.projects img{
+    width: 100%;
+    height: auto;
+    padding: 1px;
+}
+
+.portfolio-grid{
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* el dorado */
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+    width: 100%;    
+}
+
+.bg-img{
+    width: 100%;
+    height: 100%;
+}
+
+.pro1-img{
+    padding: 5px ;
+    width: 100%;
+    height: 400px;
+    gap: 20px;
+}
+
+.pro2-img{
+    padding: 5px;
+    width: 100%;
+    height: 400px;
+    gap: 20px;
+}
+
+
+
+.pro1mc-img{
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+
+.project-info{
+    padding-right: 3%;
+    text-align: left;
+
+}
+
+
+
+
+
+
+/* about me */
+
+
+.aboutme-info{
+    padding: 30px;
+}
+
+.carousel {
+    display: flex;
+    position: relative;
+    width: 400px;
+    margin: 15px auto;
+}
+
+.carousel-images {
+    position: relative;
+    padding-bottom: 30px;
+    display: block;
+    width: 100%;
+}
+
+
+/* footer and icons */
+
+footer {
+    height: 200px;
+    width: 500px;
+    padding: 30px 2%;
+}
+
+footer a {
+    font-size: medium;
+
+}
+
+.footer-container { 
+    padding-bottom: 3%;
+}
+
+.icons {
+    width: 20%;
+}

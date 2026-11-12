@@ -1,0 +1,280 @@
+* {box-sizing: border-box; font-family: "poppins", sans-serif; font-weight: 400;}
+* {box-sizing: border-box; font-family: "Parastoo", sans-serif; font-weight: 500;}
+
+
+body {
+    background-color: #ECE7DF;
+    color: #2D0402;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* heading */
+
+h1 {
+    font-family: "Parastoo";
+    display: flex;
+    font-size: 80px;  
+    color:#2D0402;
+}
+
+h2 {
+    font-family: "Poppins";
+    font-size: larger;
+    font-weight: 300;
+    color:#2D0402;
+}
+
+h3 {
+    font-family: "Parastoo";
+    display: flex;
+    font-size: 30px;  
+    color:#2D0402;
+}
+
+
+p {
+    font-family: "Poppins";
+    font-size: small;
+    font-weight: 400;
+    color:#5c5c5c;
+}
+
+a {
+    font-size: larger;
+    color:#2D0402;
+    text-decoration: none;
+}
+
+
+
+/* header and nav */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 5000;
+    height: 110px;
+    background-color: #ECE7DF;
+    text-align: right;
+    padding: 30px 2%;
+}
+
+.logo-img {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    width: 45%;
+}
+
+nav {
+    width: 8%;
+    height: 30px;
+    justify-content: space-between;
+    text-align: right;
+}
+
+nav a {
+    align-items: center;
+    text-decoration: none;
+    color: #2D0402;
+    padding-right: 15px;
+    font-weight:500;
+    font-size: x-large;
+}
+
+.hamburger-button {
+    display: none; 
+}
+
+.mobile-overlay {
+    display: none;
+}
+
+
+
+/* portfolio main page */
+
+h2 a {
+    line-height: 40%;
+}
+
+.portfolio{
+    display: flex;
+    padding: 20% 2%;
+    gap: 13px;
+
+}
+
+.projects{
+    width: 100%;
+    text-align: left;
+   
+}
+
+.projects img{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 1px;
+}
+
+.portfolio-grid{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 50px;
+    padding: 5%;
+}
+
+/* el dorado */
+
+.container{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    display:flex;
+    
+}
+
+.bg-img{
+    width: 100%;
+    height: 800px;
+}
+
+
+.pro1-img{
+    display: flex;
+    padding: 50px 2%;
+    width: 100%;
+    height: 700px;
+    gap: 20px;
+}
+
+
+.pro1mc-img{
+    padding: 5px 2%;
+    width: 100%;
+    height: 1000px;
+}
+
+
+.project-info{
+    padding-right: 3%;
+    text-align: left;
+
+}
+
+.text-box{
+    gap: 50px;
+}
+
+.text-info{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.text-left, .text-right{
+    gap: 50px;
+    width: 100%;
+}
+
+.additional-text{
+    display: none;
+    gap: 50px;
+}
+
+
+
+/* sound scape */
+
+.pro2-img{
+    display: flex;
+    padding: 5px 2%;
+    width: 100%;
+    height: 1000px;
+}
+
+
+.pro2mc-img{
+    padding: 5px 2%;
+    width: 100%;
+    height: 1500px;
+}
+    
+
+
+
+
+/* about me */
+
+
+.aboutme-info{
+    padding: 30px;
+}
+
+.carousel {
+    display: flex;
+    position: relative;
+    width: 600px;
+    margin: 15px auto;
+}
+
+.carousel-images {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 40%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 5px;
+}
+
+.next {
+    right: 5px;
+}
+
+
+
+/* footer and icons */
+
+footer {
+    height: 250px;
+    padding: 30px 2%;
+    background: #ECE7DF; 
+}
+
+footer a {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    font-size: x-large;
+    text-decoration: none;
+    line-height: 50%;
+    padding: 8px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    justify-content: space-between;
+    padding-bottom: 3%;
+}
+
+.icons {
+    width: 10%;
+}

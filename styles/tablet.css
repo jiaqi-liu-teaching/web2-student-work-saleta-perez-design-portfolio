@@ -1,0 +1,116 @@
+
+/* heading */
+
+h1 {
+    display: flex;
+    padding-top: 40px;
+    font-size: 40px;  
+}
+
+h2 {
+    font-size: medium;
+    font-weight: 300;
+}
+
+p {
+    font-size: small;
+}
+
+a {
+    font-size: larger;
+}
+
+
+/* header and nav */
+
+header {
+    padding: 30px 2%;
+    width: 100%;
+}
+
+.logo-img {
+    padding-left: 10px;
+    width: 50%;
+}
+
+nav {
+    width: 40%;
+}
+
+nav a {
+    padding-right: 15px;
+    font-size: large;
+}
+
+
+
+/* el dorado */
+
+
+.container{
+    width: 1000px;
+    gap: 30px;
+}
+
+.bg-img{
+    width: 50%;
+    height: 500px;
+}
+
+
+.project-info{
+    padding-right: 3%;
+    text-align: left;
+
+}
+
+
+.pro1-img{
+    display: flex;
+    padding: 30px 2%;
+    width: 90%;
+    height: 500px;
+}
+
+
+.pro1mc-img{
+    padding: 30px 2%;
+    width: 100%;
+    height: 800px;
+}
+
+/* sound scape */
+
+.pro2-img{
+    padding: 30px 2%;
+    width: 100%;
+    height: 750px;
+}
+
+
+.pro2mc-img{
+    padding: 30px 2%;
+    width: 100%;
+    height: 500px;
+}
+
+
+/* footer and icons */
+
+footer {
+    height: 270px;
+    width: 100%;
+    padding: 30px 2%;
+}
+
+footer a {
+    font-size: large;
+}
+
+.footer-container { 
+    padding-bottom: 3%;
+}
+
+.icons {
+    width: 20%;
+}

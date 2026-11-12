@@ -1,0 +1,209 @@
+/* Project content follows the original header's 2% page edges. */
+.project-page { --page-gutter: 2%; --section-gap: 72px; }
+.project-page > :is(header,footer) {
+  width: 100%;
+  padding-inline: var(--page-gutter);
+}
+.project-page > .project-intro {
+  box-sizing: border-box;
+  width: calc(100% - 2 * var(--page-gutter));
+  min-width: 0;
+  max-width: none;
+  margin: 0 auto var(--section-gap);
+  padding: 0;
+}
+.project-page > .project-intro {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(28px, 4vw, 64px);
+  margin-top: 32px;
+}
+.project-page .project-intro > .bg-img {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+.project-page .project-info {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+}
+.project-page .project-info h1 {
+  display: block;
+  margin: 0 0 24px;
+  padding: 0;
+  font-size: clamp(44px, 4.5vw, 72px);
+  font-weight: 500;
+  line-height: 1;
+}
+.project-page .project-description {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #2D0402;
+}
+.project-page .text-box { margin-top: 32px; }
+.project-page .text-box h3 {
+  display: block;
+  margin: 0 0 20px;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.project-page .project-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+}
+.project-page .project-fact { min-width: 0; }
+.project-page .project-fact dt {
+  margin: 0 0 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #5c5c5c;
+}
+.project-page .project-fact dd {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #2D0402;
+  overflow-wrap: break-word;
+}
+@media (min-width: 601px) and (max-width: 999px) {
+  .project-page .project-description { font-size: 14px; }
+  .project-page .project-facts { gap: 20px 16px; }
+  .project-page .project-fact dd { font-size: 13px; }
+}
+@media (max-width: 600px) {
+  .project-page { --section-gap: 48px; }
+  .project-page > .project-intro {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    margin-top: 20px;
+  }
+  .project-page .project-info h1 { font-size: 44px; margin-bottom: 20px; }
+  .project-page .project-description { font-size: 14px; }
+  .project-page .text-box { margin-top: 28px; }
+  .project-page .text-box h3 { font-size: 26px; }
+  .project-page .project-facts { gap: 20px 16px; }
+}
+
+/* One compact section rhythm, independent of the existing image widths. */
+.project-page { --section-gap: 40px; }
+.project-page > .project-media {
+  margin-top: 0;
+  margin-bottom: var(--section-gap);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.project-page .project-media > img {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+@media (max-width: 600px) {
+  .project-page { --section-gap: 24px; }
+}
+
+/* All project content follows the header inset, including image sections. */
+.project-page > .project-media {
+  box-sizing: border-box;
+  width: calc(100% - 2 * var(--page-gutter));
+  max-width: none;
+  min-width: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+.project-page .project-media > img {
+  min-width: 0;
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Mobile header and every detail section share one 2% gutter. */
+@media (max-width: 600px) {
+  .project-page { --page-gutter: 2%; }
+  .project-page > header {
+    box-sizing: border-box;
+    width: 100%;
+    padding-inline: var(--page-gutter);
+  }
+  .project-page > :is(.project-intro,.project-media) {
+    box-sizing: border-box;
+    width: calc(100% - 2 * var(--page-gutter));
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+  .project-page :is(.project-info,.text-box,.text-right) {
+    width: 100%;
+    min-width: 0;
+    padding-inline: 0;
+    margin-inline: 0;
+  }
+  .project-page :is(.project-intro,.project-media) > img {
+    padding-inline: 0;
+    margin-inline: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-page > header .logo-img {
+    padding-left: 0;
+    margin-left: 0;
+  }
+}
+
+/* Match the preferred original header inset: 2% plus 10px. */
+@media (max-width: 600px) {
+  .project-page { --page-gutter: calc(2% + 10px); }
+  .project-page > header .logo-img {
+    padding-left: 0;
+    margin-left: 0;
+  }
+}
+
+/* Picture sources swap the artwork without altering desktop flex geometry. */
+.project-page .project-media > picture.mobile-artwork {
+  display: contents;
+}
+.project-page .project-media > picture.mobile-artwork > img {
+  min-width: 0;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  /* Size every mobile image by its own ratio, not the old 400/1500px boxes. */
+  .project-page .project-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    padding: 0;
+    margin: 0;
+  }
+  .project-page > .project-media {
+    gap: 24px;
+  }
+}
+
+/* Give the cropped mobile artwork a little more breathing room. */
+@media (max-width: 600px) {
+  .project-page { --section-gap: 32px; }
+  .project-page > .project-media { gap: 32px; }
+}

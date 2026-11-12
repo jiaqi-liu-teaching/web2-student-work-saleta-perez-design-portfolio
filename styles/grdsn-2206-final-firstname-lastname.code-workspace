@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../files/grdsn-2206-project2-saleta-perez"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "grdsn-2206-final-firstname-lastname"
+	}
+}

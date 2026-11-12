@@ -1,0 +1,50 @@
+/* Motion adds feedback without changing the established layout or palette. */
+:root { --motion-ease: cubic-bezier(.16,1,.3,1); }
+.portfolio-grid > a.projects {
+  transition: transform 450ms var(--motion-ease);
+}
+.portfolio-grid > a.projects h2 {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 250ms ease;
+}
+nav a, footer a {
+  transition: opacity 200ms ease;
+}
+:is(.hamburger-button,.close-button,.prev,.next) {
+  cursor: pointer;
+  transition: transform 250ms var(--motion-ease), opacity 200ms ease;
+}
+.about-page .carousel { isolation: isolate; }
+.about-page .carousel-outgoing {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 1;
+}
+.about-page .carousel :is(.prev,.next) { z-index: 2; }
+:is(a,[role='button']):focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+}
+@media (hover: hover) {
+  .portfolio-grid > a.projects:hover { transform: translateY(-6px); }
+  .portfolio-grid > a.projects:hover h2 { text-decoration-color: currentColor; }
+  nav a:hover, footer a:hover { opacity: .6; }
+  :is(.hamburger-button,.close-button,.prev,.next):hover { transform: scale(1.08); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-grid > a.projects,
+  .portfolio-grid > a.projects h2,
+  nav a, footer a,
+  .mobile-overlay,
+  :is(.hamburger-button,.close-button,.prev,.next) { transition: none; }
+  .portfolio-grid > a.projects:hover,
+  :is(.hamburger-button,.close-button,.prev,.next):hover { transform: none; }
+}
