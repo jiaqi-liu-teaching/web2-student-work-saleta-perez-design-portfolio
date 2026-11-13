@@ -33,6 +33,7 @@
   const carousel = document.querySelector('.carousel');
   if (image && carousel) {
     const slides = ['img1.png', 'img2.png', 'img3.png'];
+    const slideImages = slides.map(file => { const img = new Image(); img.src = `assets/${file}`; return img; });
     let current = slides.indexOf(image.getAttribute('src').split('/').pop());
     if (current < 0) current = 0;
     let busy = false;
@@ -43,9 +44,7 @@
       const url = `assets/${slides[nextIndex]}`;
       let outgoing;
       try {
-        const preload = new Image();
-        preload.src = url;
-        await preload.decode();
+        await slideImages[nextIndex].decode();
         if (reducedMotion.matches || !image.animate) {
           image.src = url;
         } else {
@@ -74,25 +73,32 @@
         busy = false;
       }
     };
-    for (const [selector, direction, label] of [['.prev', -1, 'Previous image'], ['.next', 1, 'Next image']]) {
-      const button = carousel.querySelector(selector);
-      if (!button) continue;
-      button.tabIndex = 0;
-      button.setAttribute('role', 'button');
-      button.setAttribute('aria-label', label);
-      button.addEventListener('click', () => change(direction));
-      button.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          change(direction);
-        }
-      });
-    }
-    carousel.addEventListener('keydown', (event) => {
-      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-        event.preventDefault();
-        change(event.key === 'ArrowLeft' ? -1 : 1);
-      }
-    });
+    let timer;
+    const stop = () => clearInterval(timer);
+    const start = () => {
+      stop();
+      timer = setInterval(() => {
+        if (document.hidden) return;
+        const bounds = carousel.getBoundingClientRect();
+        if (bounds.bottom > 0 && bounds.top < innerHeight) change(1);
+      }, 1500);
+    };
+    document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+    window.addEventListener('pagehide', stop);
+    window.addEventListener('pageshow', event => { if (event.persisted) start(); });
+    start();
   }
+})();
+
+// Keep anchor/focus scrolling clear of the phone header as fonts and images load.
+(() => {
+  const header = document.querySelector('body > header');
+  if (!header || !('ResizeObserver' in window)) return;
+  const phone = matchMedia('(max-width: 600px)');
+  const measure = () => {
+    if (phone.matches) document.documentElement.style.setProperty('--mobile-header-height', `${header.getBoundingClientRect().height}px`);
+  };
+  new ResizeObserver(measure).observe(header);
+  phone.addEventListener('change', measure);
+  measure();
 })();

@@ -278,3 +278,50 @@ footer a {
 .icons {
     width: 10%;
 }
+/* Desktop navigation should fit its label instead of a narrow percentage. */
+@media (min-width: 1000px) {
+    header > nav {
+        width: auto;
+        flex: 0 0 auto;
+    }
+    header > nav > a {
+        white-space: nowrap;
+    }
+}
+
+/* Compact footer rhythm shared by every page. */
+body > footer {
+    height: auto;
+    min-height: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+body > footer .footer-container {
+    gap: 8px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+body > footer .footer-container p { margin: 0; }
+body > footer a {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 16px;
+    line-height: 1.4;
+}
+@media (max-width:600px) {
+    body > footer a { font-size: 14px; }
+}
+
+/* Footer links align to the same page inset as the main content. */
+body > footer .footer-container {
+    text-align: left;
+    align-items: flex-start;
+}
+body > footer a {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 18px;
+}
+@media (max-width:600px) {
+    body > footer a { font-size: 16px; }
+}

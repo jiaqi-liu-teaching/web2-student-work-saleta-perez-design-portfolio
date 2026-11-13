@@ -3,13 +3,7 @@
 .portfolio-grid > a.projects {
   transition: transform 450ms var(--motion-ease);
 }
-.portfolio-grid > a.projects h2 {
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  text-underline-offset: 6px;
-  text-decoration-thickness: 1px;
-  transition: text-decoration-color 250ms ease;
-}
+.portfolio-grid > a.projects h2 { text-decoration: none; }
 nav a, footer a {
   transition: opacity 200ms ease;
 }
@@ -35,7 +29,6 @@ nav a, footer a {
 }
 @media (hover: hover) {
   .portfolio-grid > a.projects:hover { transform: translateY(-6px); }
-  .portfolio-grid > a.projects:hover h2 { text-decoration-color: currentColor; }
   nav a:hover, footer a:hover { opacity: .6; }
   :is(.hamburger-button,.close-button,.prev,.next):hover { transform: scale(1.08); }
 }
